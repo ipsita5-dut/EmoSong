@@ -1,0 +1,170 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: (230, 230, 250, 0.5);        }
+.container {
+    display: flex;
+    width: 80%;
+    max-width: 1200px;
+    background-color: #1e1e2f;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+.left {
+    flex: 1;
+    position: relative;
+    background-color: #1e1e2f;
+}
+.left img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.left .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px;
+}
+.left .overlay .logo {
+    color: white;
+    font-size: 24px;
+    font-weight: 700;
+}
+.left .overlay .back {
+    color: white;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+.left .overlay .back i {
+    margin-right: 5px;
+}
+.left .overlay .caption {
+    color: white;
+    font-size: 24px;
+    font-weight: 500;
+    margin-bottom: 500px;
+}
+.right {
+    flex: 1;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.right h2 {
+    margin: 0 0 20px;
+    font-size: 32px;
+    font-weight: 700;
+    color: white;
+}
+.right p {
+    margin: 0 0 20px;
+    font-size: 14px;
+    color: #b0a8b9;
+}
+.right p a {
+    color: #b0a8b9;
+    text-decoration: none;
+}
+.right form {
+    display: flex;
+    flex-direction: column;
+}
+.right form input {
+    margin-bottom: 20px;
+    padding: 15px;
+    border: none;
+    border-radius: 5px;
+    background-color: #4a3b5e;
+    color: #fff;
+    font-size: 16px;
+}
+.right form input::placeholder {
+    color: #b0b0b0;
+}
+.right form .checkbox-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.right form .checkbox-container input {
+    margin-right: 10px;
+}
+.right form .checkbox-container label {
+    color: #b0b0b0;
+}
+.right form .checkbox-container a {
+    color: #6a6aff;
+    text-decoration: none;
+}
+.right form button {
+    padding: 15px;
+    border: none;
+    border-radius: 5px;
+    background-color: #7a4bff;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+}
+.right .or-register {
+    margin: 20px 0;
+    text-align: center;
+    font-size: 14px;
+    color: #b0a8b9;
+}
+.right .social-buttons {
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.right .social-buttons button {
+    flex: 1;
+    padding: 15px;
+    border: none;
+    border-radius: 5px;
+    background-color: #4a3b5e;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.right .social-buttons button i {
+    margin-right: 10px;
+}
+.right .social-buttons button + button {
+    margin-left: 10px;
+}
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+    .left, .right {
+        flex: none;
+        width: 100%;
+    }
+    .left {
+        padding: 10px;
+    }
+    .right {
+        padding: 20px;
+    }
+}

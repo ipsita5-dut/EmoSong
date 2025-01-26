@@ -1,0 +1,105 @@
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #24827f;
+}
+.footer div {
+    flex: 1;
+    text-align: center;
+}
+.footer div:not(:last-child) {
+    border-right: 1px solid #FFFFFF;
+}
+.footer img {
+    width: 50px;
+    height: 50px;
+}
+.footer form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.footer input[type="email"] {
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #FFFFFF;
+    border-radius: 5px;
+    width: 80%;
+}
+.footer input[type="checkbox"] {
+    margin-right: 10px;
+}
+.footer button {
+    padding: 10px 20px;
+    background-color: #FFFFFF;
+    color: #1A6D6A;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.footer-bottom {
+    text-align: center;
+    padding: 10px;
+    background-color: #144D4B;
+}
+.footer-bottom p{
+    color: white;
+}
+@media (max-width: 768px) {
+    .footer {
+        flex-direction: column;
+    }
+    .footer div {
+        border-right: none;
+        border-bottom: 1px solid #FFFFFF;
+        padding: 10px 0;
+    }
+    .footer div:last-child {
+        border-bottom: none;
+    }
+}
+
+.footer h2{
+    color: white;
+}
+.footer p{
+    color: white;
+}
+label{
+    color: white;
+}
+
+.logo {
+display: flex;
+align-items: center;
+gap: 8px;
+}
+
+
+/* Icon Styling */
+.footer-logo-icon {
+font-size: 40px; /* Larger and noticeable */
+color: #ff6f61; /* Coral for a vibrant touch */
+animation: bounce 1.5s infinite ease-in-out;
+}
+
+/* Emo Part */
+.footer-logo-emotion {
+color: #a2d3e1; /* Calm and modern blue */
+font-family: 'Lobster', cursive; /* Playful handwritten font */
+font-size: 32px;
+font-weight: 600;
+letter-spacing: 0.5px;
+}
+
+/* Song Part */
+.footer-logo-song {
+color: #ebcbed; /* Energetic orange */
+font-family: 'Oswald', cursive; /* Bold and modern font */
+font-size: 28px;
+font-weight: 600;
+letter-spacing: 1px;
+}

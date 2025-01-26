@@ -1,0 +1,219 @@
+/* body {
+    font-family: Arial, sans-serif;
+    color: #333; 
+    text-align: center; 
+    margin: 0;
+    padding: 20px;
+}
+
+h1 {
+    margin-bottom: 20px;
+    font-size: 2.5em;  
+    text-transform: uppercase; 
+    letter-spacing: 2px; 
+} */
+h2 {
+    margin-top: 20px;
+    font-size: 1.8rem;
+    text-align: center;
+    color: #ffc107;
+    animation: fadeIn 1s ease-in-out;
+    letter-spacing: 1px;
+  }
+.webcam-container {
+    margin: 20px auto;
+    position: relative;
+    display: inline-block;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Add shadow for a modern look */
+    border-radius: 12px; /* Round the corners of the container */
+    overflow: hidden; /* Hide overflow for rounded corners */
+    background: rgba(255, 255, 255, 0.1); /* Subtle white overlay */
+    padding: 10px;
+}
+
+@keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+/* Container and Video Section */
+video {
+    border: 5px solid rgba(92, 37, 117, 0.8);
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+    width: 100%;
+    max-width: 700px;
+    height: auto;
+    margin-bottom: 20px;
+    transition: transform 0.3s ease;
+    position: relative;
+    margin-left: 250px;
+    transform: scaleX(-1);
+
+
+  }
+  video:hover {
+    transform: scaleX(-1) scale(1.02); /* Maintain flip on hover with scale effect */
+  }
+  
+  
+/* Button Section Below Video */
+.capture-btn {
+    background: linear-gradient(135deg, #ff7eb3, #ff758c);
+    color: #ffffff;
+    padding: 15px 35px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.4s ease-in-out;
+    box-shadow: 0 6px 20px rgba(255, 120, 130, 0.5);
+  }
+
+.capture-btn :hover {
+    background: linear-gradient(45deg, #d8345f, #ff6f61);
+    transform: scale(1.1);
+    box-shadow: 0 5px 15px rgba(255, 111, 97, 0.6);
+}
+#mood-result {
+    margin-top: 30px;
+    font-size: 1.8em;
+    color: #ffdf00; /* Gold color for the mood result */
+    font-weight: bold; /* Make it stand out */
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5); /* Add shadow for better readability */
+}
+.quote {
+    margin-top: 40px;
+    font-style: italic;
+    font-size: 1.4em;
+    color: #f0e68c; /* Khaki color for quotes */
+    text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.4); /* Subtle text shadow */
+}
+.logo {
+    margin-top: 30px;
+    width: 120px;
+    height: auto;
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2)); /* Add shadow to the logo */
+}
+
+footer {
+    margin-top: 50px;
+    font-size: 0.9em;
+    color: rgba(255, 255, 255, 0.7); /* Slightly transparent text */
+}
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+  }
+  
+  .modal-content {
+    background: linear-gradient(135deg, #1e1e2e, #292942);
+    color: #ffffff;
+    border-radius: 15px;
+    padding: 30px;
+    width: 90%;
+    max-width: 500px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+    animation: slideDown 0.5s ease-in-out;
+    position: relative;
+
+  }
+  
+  @keyframes slideDown {
+    from {
+      transform: translateY(-50px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
+  .modal-content .close {
+    font-size: 1.5rem;
+    color: #ff6f61;
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    cursor: pointer;
+    transition: color 0.3s ease-in-out;
+  }
+  
+  .modal-content .close:hover {
+    color: #d8345f;
+  }
+  
+  
+  .modal-content h2 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+    color: #ff6f61;
+  }
+  
+  .modal-content p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    letter-spacing: 0.5px;
+
+  }
+  
+  .modal-content button {
+    background: linear-gradient(45deg, #1db954, #1ed760);
+    color: #ffffff;
+    padding: 10px 25px;
+    font-size: 1rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 8px 25px rgba(29, 185, 84, 0.5);
+
+  }
+  
+  .modal-content button:hover {
+    background: #1db954;
+    transform: scale(1.1);
+    box-shadow: 0 5px 15px rgba(29, 185, 84, 0.6);
+  }
+  
+  /* Spotify Link */
+  .modal-content a {
+    text-decoration: none;
+  }
+  @media (max-width: 768px) {
+    video {
+      width: 95%;
+    }
+  
+    .modal-content {
+      padding: 30px;
+    }
+  
+    .modal-content h2 {
+      font-size: 1.6rem;
+    }
+  
+    .modal-content p {
+      font-size: 1rem;
+    }
+  
+    .modal-content button {
+      font-size: 1rem;
+      padding: 10px 25px;
+    }
+  }
