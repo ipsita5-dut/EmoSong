@@ -158,5 +158,54 @@ def detect_emotion():
 
     return jsonify({'emotion': emotion_label, 'song': song_suggestion})
 
+
+@app.route('/upload_photo', methods=['POST'])
+def upload_photo():
+    if 'file' not in request.files:
+        return jsonify({'error': 'No file part'}), 400
+
+    file = request.files['file']
+    if file.filename == '':
+        return jsonify({'error': 'No selected file'}), 400
+
+    # Save the uploaded file to the uploads folder
+    file_path = os.path.join(UPLOAD_FOLDER, file.filename)
+    file.save(file_path)
+
+    # Perform mood detection
+    img = cv2.imread(file_path)
+    img_gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+    img_resized = cv2.resize(img_gray, (48, 48))
+    img_normalized = img_resized / 255.0
+    img_reshaped = np.reshape(img_normalized, (1, 48, 48, 1))
+
+    predictions = model.predict(img_reshaped)
+    emotion_index = np.argmax(predictions[0])
+    emotion_label = labels.get(emotion_index, 'Unknown')
+    # custom_emotion_confidence = float(predictions[0][emotion_index] * 100 ) # Convert to percentage
+
+    img_rgb = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
+
+     # Predict emotion using DeepFace
+    # try:
+    #     deepface_result = DeepFace.analyze(img_path=img_rgb, actions=['emotion'], enforce_detection=False)
+    #     deepface_emotion_label = deepface_result[0]['dominant_emotion']
+    #     deepface_emotion_confidence = float(deepface_result[0]['emotion'][deepface_emotion_label])  # Get confidence
+    # except Exception as e:
+    #     deepface_emotion_label = 'Unknown'
+    #     deepface_emotion_confidence = 0.0
+    #     print("Error with DeepFace:", e)
+
+    if emotion_index in labels:
+        emotion_label = labels[emotion_index]
+    else:
+        emotion_label = 'Unknown'  # Fallback in case of an invalid index
+
+    # Get a song suggestion based on the detected mood
+    song_suggestion = get_song_suggestion(emotion_label)
+
+    return jsonify({'emotion': emotion_label, 'song': song_suggestion})
+
+
 if __name__ == '__main__':
     app.run(debug=True)
